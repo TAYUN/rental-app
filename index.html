@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>租房管理APP</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <style type="text/tailwindcss">
+      @theme {
+        --color-primary: #2563eb;
+        --color-secondary: #f97316;
+        --color-success: #10b981;
+        --color-warning: #f59e0b;
+        --color-error: #ef4444;
+        --color-neutral-light: #f3f4f6;
+        --color-neutral-dark: #111827;
+        --color-text-primary: #1f2937;
+        --color-text-secondary: #4b5563;
+        --color-text-muted: #6b7280;
+        --color-bg-light: #ffffff;
+        --color-bg-dark: #374151;
+        --color-card-bg: #ffffff;
+        --color-card-shadow: rgba(0, 0, 0, 0.1);
+      }
+
+      .app-container {
+        @apply max-w-[375px] h-[812px] mx-auto bg-white rounded-[40px] shadow-xl overflow-hidden border-4 border-gray-200 relative;
+      }
+
+      /* 隐藏滚动条但保持滚动功能 */
+      .content-area::-webkit-scrollbar {
+        display: none;
+      }
+
+      .content-area {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+
+      .tab-bar {
+        @apply absolute bottom-0 left-0 right-0 h-16 bg-white border-t border-gray-200 flex justify-around items-center;
+      }
+
+      .tab-item {
+        @apply flex flex-col items-center justify-center w-1/4 h-full text-gray-500 transition-colors duration-200;
+      }
+
+      .tab-item.active {
+        @apply text-primary;
+      }
+
+      .card {
+        @apply bg-white rounded-xl shadow-md p-4 mb-4;
+      }
+
+      .action-button {
+        @apply bg-white rounded-xl shadow-md p-4 mb-4 flex items-center justify-center py-3 text-primary transition-all duration-200;
+      }
+
+      .action-button:hover {
+        @apply bg-primary/10 text-primary shadow-lg;
+      }
+     </style>
+    <!-- Import Map -->
+    <script type="importmap">
+      {
+        "imports": {
+          "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+        }
+      }
+    </script>
+  </head>
+  <body class="bg-gray-100">
+    <div id="app">
+      <!-- Vue将在这里渲染应用 -->
+    </div>
+
+    <!-- 使用ES模块方式加载主应用脚本 -->
+    <script type="module" src="assets/js/main.js"></script>
+  </body>
+</html>
