@@ -4,8 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>租房管理APP</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"
+    ></script>
     <link
+      defer
       href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
       rel="stylesheet"
     />
@@ -27,22 +32,26 @@
         --color-card-shadow: rgba(0, 0, 0, 0.1);
       }
 
+      /* .app-container {
+        @apply max-w-[375px] h-[812px] mx-auto bg-white rounded-[40px] shadow-xl overflow-hidden border-4 border-gray-200 relative;
+      } */
+
+      /* .tab-bar {
+        @apply absolute bottom-0 left-0 right-0 h-16 bg-white border-t border-gray-200 flex justify-around items-center;
+      } */
+      /* 基础样式 */
       .app-container {
-        @apply mx-auto bg-white  shadow-xl overflow-hidden border-gray-200 relative;
+        @apply bg-white   relative;
       }
 
       /* 隐藏滚动条但保持滚动功能 */
-      .content-area::-webkit-scrollbar {
-        display: none;
-      }
-
       .content-area {
-        -ms-overflow-style: none; /* IE and Edge */
-        scrollbar-width: none; /* Firefox */
+        @apply h-full overflow-y-auto pb-16;
       }
 
+      /* tabbar栏样式 */
       .tab-bar {
-        @apply fixed bottom-0 left-0 right-0 h-16 bg-white border-t border-gray-200 flex justify-around items-center;
+        @apply fixed bottom-0 left-0 right-0 h-16 bg-white border-t border-gray-200 flex justify-around items-center w-full mx-auto z-50;
       }
 
       .tab-item {
@@ -53,20 +62,51 @@
         @apply text-primary;
       }
 
+      /* 卡片样式 */
       .card {
-        @apply bg-white rounded-xl shadow-md p-4 mb-4;
+        @apply bg-white rounded-lg shadow-md p-4 mb-4;
       }
 
+      /* 操作按钮样式 */
       .action-button {
-        @apply bg-white rounded-xl shadow-md p-4 mb-4 flex items-center justify-center py-3 text-primary transition-all duration-200;
+        @apply bg-white rounded-lg shadow-md p-4 mb-4 flex items-center justify-center pt-3 pb-3 text-primary transition-all duration-200;
       }
 
       .action-button:hover {
-        @apply bg-primary/10 text-primary shadow-lg;
+        @apply bg-blue-100 text-primary shadow-xl;
+      }
+
+      /* 页面通用样式 */
+      .page-container {
+        @apply p-4;
+      }
+
+      .page-title {
+        @apply text-2xl font-bold mb-6;
+      }
+
+      /* 数据概览样式 */
+      .data-overview {
+        @apply bg-gradient-to-r from-primary to-sky-400 text-white;
+      }
+
+      /* 房间状态标签 */
+      .room-status {
+        @apply text-xs py-1 px-2 rounded-full text-white;
+      }
+
+      .room-status.rented {
+        @apply bg-success;
+      }
+
+      .room-status.vacant {
+        @apply bg-warning;
+      }
+
+      .room-status.overdue {
+        @apply bg-error;
       }
     </style>
-    <link rel="stylesheet" href="assets/css/main.css" />
-
     <script type="importmap">
       {
         "imports": {
@@ -74,14 +114,21 @@
         }
       }
     </script>
-    <title>租房管理APP</title>
   </head>
   <body class="bg-gray-100">
     <div id="app">
       <!-- Vue将在这里渲染应用 -->
     </div>
 
-    <!-- 使用ES模块方式加载主应用脚本 -->
+    <!-- 主应用脚本 -->
     <script type="module" src="assets/js/main.js"></script>
+    <!-- 移动端调试神器（VConsole） -->
+    <script
+      rel="defer"
+      src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js"
+    ></script>
+    <script>
+      var vConsole = new window.VConsole(); // VConsole 默认会挂载到 `window.VConsole` 上
+    </script>
   </body>
 </html>
