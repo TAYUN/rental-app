@@ -38,7 +38,7 @@ export default {
       handleAction,
     };
   },
-  template: `
+  template: /*html*/`
     <div class="page-container">
       <h1 class="page-title">欢迎回来，房东</h1>
       

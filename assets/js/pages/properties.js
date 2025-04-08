@@ -1,5 +1,4 @@
 import { ref, computed } from "vue";
-
 // 房源页面组件
 export default {
   setup() {
@@ -93,7 +92,7 @@ export default {
       handleAddProperty,
     };
   },
-  template: `
+  template: /*html*/`
     <div class="page-container">
       <div class="flex justify-between items-center mb-6">
         <h1 class="page-title">我的房源</h1>

@@ -6,7 +6,7 @@ export default {
       required: true,
     },
   },
-  template: `
+  template: /*html*/`
     <nav class="tab-bar">
       <a href="#" 
          class="tab-item" 
