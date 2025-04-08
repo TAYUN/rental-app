@@ -9,7 +9,6 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="assets/css/main.css" />
     <style type="text/tailwindcss">
       @theme {
         --color-primary: #2563eb;
@@ -29,7 +28,7 @@
       }
 
       .app-container {
-        @apply max-w-[375px] h-[812px] mx-auto bg-white rounded-[40px] shadow-xl overflow-hidden border-4 border-gray-200 relative;
+        @apply mx-auto bg-white  shadow-xl overflow-hidden border-gray-200 relative;
       }
 
       /* 隐藏滚动条但保持滚动功能 */
@@ -43,7 +42,7 @@
       }
 
       .tab-bar {
-        @apply absolute bottom-0 left-0 right-0 h-16 bg-white border-t border-gray-200 flex justify-around items-center;
+        @apply fixed bottom-0 left-0 right-0 h-16 bg-white border-t border-gray-200 flex justify-around items-center;
       }
 
       .tab-item {
@@ -65,8 +64,9 @@
       .action-button:hover {
         @apply bg-primary/10 text-primary shadow-lg;
       }
-     </style>
-    <!-- Import Map -->
+    </style>
+    <link rel="stylesheet" href="assets/css/main.css" />
+
     <script type="importmap">
       {
         "imports": {
@@ -74,6 +74,7 @@
         }
       }
     </script>
+    <title>租房管理APP</title>
   </head>
   <body class="bg-gray-100">
     <div id="app">
