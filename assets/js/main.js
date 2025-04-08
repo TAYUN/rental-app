@@ -24,7 +24,7 @@ const app = createApp({
       changePage,
     };
   },
-  template: `
+  template: /*html*/`
     <div class="app-container">
       <div class="content-area h-full overflow-y-auto pb-16">
         <!-- 根据当前页面动态渲染组件 -->
